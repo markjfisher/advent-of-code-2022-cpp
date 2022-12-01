@@ -3,8 +3,12 @@
 
 #include "../aoc2022.h"
 
-namespace day01 {
+namespace day00 {
+	// set the input type based on the data we have
 	using input_t = std::vector<int>;
+	// using input_t = std::vector<std::string>;
+
+
 	using output_t = int;
 
 	input_t parse(const parse_t& input);
