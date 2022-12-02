@@ -3,7 +3,7 @@
 #include <string>
 
 #include "day01.h"
-#include "../util.h"
+#include "util.h"
 
 // parse into list of ints, summing over each group of ints
 day01::input_t day01::parse(const parse_t& input) {

@@ -1,5 +1,5 @@
-#ifndef ADVENTOFCODE_2022_UTIL_H
-#define ADVENTOFCODE_2022_UTIL_H
+#ifndef ADVENTOFCODE_UTIL_H
+#define ADVENTOFCODE_UTIL_H
 
 #include <vector>
 #include <string>

@@ -7,7 +7,7 @@
 #include <cassert>
 
 #include "day01/day01.h"
-//#include "day02/day02.h"
+#include "day02/day02.h"
 //#include "day03/day03.h"
 //#include "day04/day04.h"
 //#include "day05/day05.h"
@@ -24,6 +24,7 @@
 //#include "day16/day16.h"
 
 #define NUM_ITER 10
+auto year = "2022";
 
 template<std::invocable Func>
 auto time(Func&& f) {
@@ -36,7 +37,7 @@ auto time(Func&& f) {
 auto total = 0.0;
 
 #define BENCHMARK(day, num_iter) {                                         \
-    auto filename = std::string("input/") + #day + ".txt";                 \
+    auto filename = std::string("y") + year + "/input/" + #day + ".txt";   \
     std::ifstream file(filename);                                          \
     parse_t input{};                                                       \
     std::string line;                                                      \
@@ -59,7 +60,7 @@ auto total = 0.0;
     second_time /= (num_iter);                                             \
     auto second_res = day::second_part(parsing_res);                       \
     assert(second_res == day::expected_p2());                              \
-    std::cout << std::format("| {} | {:^8.4f} | {:^8.4f} | {:^8.4f} | {:^8.4f} |\n", #day, parsing_time, first_time, second_time, parsing_time + first_time + second_time); \
+    std::cout << std::format("| {} | {:^8.4f} | {:^8.4f} | {:^8.4f} | {:^8.4f} | {:20} | {:20} |\n", #day, parsing_time, first_time, second_time, parsing_time + first_time + second_time, first_res, second_res); \
     total += parsing_time + first_time + second_time;                      \
 }
 
@@ -68,7 +69,7 @@ int main() {
 		<< std::format("| {:<5} | {:^8} | {:^8} | {:^8} | {:^8} |\n", "day", "parsing", "part_1", "part_2", "sum");
 
 	BENCHMARK(day01, NUM_ITER)
-		//BENCHMARK(day02, NUM_ITER)
+	BENCHMARK(day02, NUM_ITER)
 		//BENCHMARK(day03, NUM_ITER)
 		//BENCHMARK(day04, NUM_ITER)
 		//BENCHMARK(day05, NUM_ITER)
